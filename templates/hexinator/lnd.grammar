@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ufwb version="1.17">
-    <grammar name="LND grammar" start="id:1" author="Andrey" fileextension="lnd">
+    <grammar name="LND grammar" start="id:1" author="Adyusha" fileextension="lnd">
         <description>Grammar for LND files</description>
         <scripts>
             <script name="7" type="ProcessResults" id="57">
