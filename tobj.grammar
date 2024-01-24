@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.17">
+    <grammar name="TOBJ grammar" start="id:1" author="Andrey" fileextension="tobj">
+        <description>Grammar for TOBJ files</description>
+        <structure name="TOBJ file" id="1" encoding="ISO_8859-1:1987" endian="big" signed="no">
+            <string name="NONE" id="2" fillcolor="AA0000" type="fixed-length" length="40"/>
+            <number name="path_length" id="3" fillcolor="55AA00" type="integer" length="4" endian="little"/>
+            <number name="terminator" id="4" fillcolor="FFFF00" type="integer" length="4" endian="little"/>
+            <string name="path" id="5" fillcolor="FF00FF" type="zero-terminated"/>
+        </structure>
+    </grammar>
+</ufwb>
