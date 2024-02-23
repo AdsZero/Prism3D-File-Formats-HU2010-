@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.17">
+    <grammar name="LND grammar" start="id:1" author="Adyusha" fileextension="lnd">
+        <description>Grammar for LND files</description>
+        <scripts>
+            <script name="7" type="ProcessResults" id="57">
+                <source language="Python">def init():
+	print &quot;hello init&quot;
+
+def processResult(result):
+	print &quot;hello result&quot;
+
+  	resultType = result.getType()
+
+	if resultType == RESULT_STRUCTURE_START_TYPE:
+		print(&quot;Structure Start&quot;)
+	else:
+		print(&quot;other&quot;)
+
+	level = result.getLevel()
+ 	print (level)
+
+	name = result.getName()
+
+	value = result.getValue()
+
+	if( value != None ):
+		type = value.getType()
+		if type == VALUE_BINARY:
+			startPos = result.getStartBytePos()
+			length = result.getByteLength()
+			byteView = result.getByteView()
+			for x in range(length):
+				byte = byteView.readByte(startPos + x)
+			print &quot;Binary&quot;
+		elif type == VALUE_NUMBER_UNSIGNED:
+			print &quot;Unsigned: &quot; + str(value.getUnsigned())
+		elif type == VALUE_NUMBER_SIGNED:
+			print &quot;Signed: &quot; + str(value.getSigned())
+		elif type == VALUE_NUMBER_FLOAT:
+			print &quot;Float: &quot; + str(value.getFloat())
+		elif type == VALUE_STRING:
+			print &quot;String: &quot; + value.getString()
+
+	print result.getStringRepresentation()
+
+def terminate():
+	print &quot;hello terminate&quot;
+</source>
+            </script>
+        </scripts>
+        <structure name="LND file" id="1" encoding="ISO_8859-1:1987" endian="big" signed="no">
+            <number name="𝗩𝗘𝗥𝗦𝗜𝗢𝗡" id="2" fillcolor="55AA00" type="integer" length="4" endian="little">
+                <description>File Version</description>
+            </number>
+            <number name="𝗠𝗘𝗦𝗛𝗘𝗦" id="3" fillcolor="FFFF00" type="integer" length="4" endian="little"/>
+            <number name="𝗠𝗔𝗧𝗘𝗥𝗜𝗔𝗟" id="4" fillcolor="FFAAFF" type="integer" length="4" endian="little"/>
+            <number name="NONE" id="5" fillcolor="FFAA00" type="integer" length="4" endian="little"/>
+            <structure name="𝗦𝗘𝗖𝗧𝗜𝗢𝗡" id="6" repeat="id:3" repeatmax="-1">
+                <structure name="pointA" id="7">
+                    <number name="coord_x" id="8" strokecolor="FF0000" type="float" length="4" endian="little"/>
+                    <number name="coord_y" id="9" strokecolor="55AA00" type="float" length="4" endian="little"/>
+                    <number name="coord_z" id="10" strokecolor="0055FF" type="float" length="4" endian="little"/>
+                </structure>
+                <structure name="pointB" id="12">
+                    <number name="coord_x" id="13" strokecolor="FF0000" type="float" length="4" endian="little"/>
+                    <number name="coord_y" id="14" strokecolor="55AA00" type="float" length="4" endian="little"/>
+                    <number name="coord_z" id="15" strokecolor="0055FF" type="float" length="4" endian="little"/>
+                </structure>
+                <number name="TAB" id="17" fillcolor="55FF00" repeatmin="0" type="integer" length="2" endian="little"/>
+                <structure name="𝗨𝗩 𝗠𝗔𝗧𝗘𝗥𝗜𝗔𝗟" id="18" repeat="id:4" repeatmax="-1">
+                    <structure name="texture[0]" id="27">
+                        <number name="scale" id="20" strokecolor="FFFFFF" fillcolor="AAAAFF" repeatmin="0" type="float" length="4" endian="little"/>
+                        <number name="n1" id="25" type="float" length="4" endian="little"/>
+                        <number name="n2" id="26" type="float" length="4" endian="little"/>
+                    </structure>
+                    <structure name="texture[1]" id="29">
+                        <number name="scale" id="31" type="float" length="4" endian="little"/>
+                        <number name="n1" id="32" type="float" length="4" endian="little"/>
+                        <number name="n2" id="33" type="float" length="4" endian="little"/>
+                    </structure>
+                    <structure name="texture[2]" id="34">
+                        <number name="scale" id="36" type="float" length="4" endian="little"/>
+                        <number name="n1" id="37" type="float" length="4" endian="little"/>
+                        <number name="n2" id="38" type="float" length="4" endian="little"/>
+                    </structure>
+                </structure>
+            </structure>
+        </structure>
+    </grammar>
+</ufwb>
