@@ -1,0 +1,18 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: tobj.bt
+//    Author: Adyusha
+//   Version: 1.0
+//   Purpose: Parse tobj files.
+//  Category: Texture Object
+// File Mask: *.tobj
+//------------------------------------------------
+    typedef struct { 
+    char char_unknown[40] <bgcolor=0x0000FF, comment="It is often repeated. It is possible to adjust the display of the image in the game">;
+    uint path_length <bgcolor=0x008000, comment="The length of the string specifying the path to the file">;
+    uint null_terminator <bgcolor=0x00FFFF, comment="Null-terminated string">;
+    char path[path_length] <bgcolor=0xFE93D7,comment="The path to the file">;
+    } MAIN; // this is where the variable type is defined
+
+MAIN tobjFile; // this is where the variable is defined
