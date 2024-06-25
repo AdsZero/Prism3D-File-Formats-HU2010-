@@ -10,4 +10,4 @@
 | 4 | .ai       | ... | ... | ... |  0%  |  Logic  | :x: |
 
 ## Scripts
-- [pmc_info.py](https://github.com/AdsZero/Prism3D-File-Formats-HU2010-/tree/main/scripts/hexinator/pmc_info.py) - Using this script, you can view information about the pmc file. Drag and drop the pmc file onto the script.
+- [pmc_info.py](https://github.com/AdsZero/Prism3D-File-Formats-HU2010-/tree/main/scripts/pmc_info.py) - Using this script, you can view information about the pmc file. Drag and drop the pmc file onto the script.
