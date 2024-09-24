@@ -11,3 +11,4 @@
 
 ## Scripts
 - [pmc_info.py](https://github.com/AdsZero/Prism3D-File-Formats-HU2010-/tree/main/scripts/pmc_info.py) - Using this script, you can view information about the pmc file. Drag and drop the pmc file onto the script.
+- [convert_coordinates.py](https://github.com/AdsZero/Prism3D-File-Formats-HU2010-/tree/main/scripts/convert_coordinates.py) - This script converts the coordinates of the objects to a normal view. Place the script next to the "landscape.game" and run it.
