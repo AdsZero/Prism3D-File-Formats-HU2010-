@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ufwb version="1.17">
-    <grammar name="PMC Grammar" start="id:249" author="YourName" fileextension="pmc">
+    <grammar name="PMC Grammar" start="id:249" author="Adyusha" fileextension="pmc">
         <description>Grammar for PMC files</description>
         <scripts>
             <script name="Script1" type="ProcessResults" id="57">
