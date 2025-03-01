@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.17">
+    <grammar name="PMC Grammar" start="id:249" author="YourName" fileextension="pmc">
+        <description>Grammar for PMC files</description>
+        <scripts>
+            <script name="Script1" type="ProcessResults" id="57">
+                <source language="Python">
+def init():
+    print(&quot;hello init&quot;)
+
+def processResult(result):
+    print(&quot;hello result&quot;)
+
+    resultType = result.getType()
+
+    if resultType == RESULT_STRUCTURE_START_TYPE:
+        print(&quot;Structure Start&quot;)
+    else:
+        print(&quot;other&quot;)
+
+    level = result.getLevel()
+    print(level)
+
+    name = result.getName()
+    value = result.getValue()
+
+    if value is not None:
+        type = value.getType()
+        if type == VALUE_BINARY:
+            startPos = result.getStartBytePos()
+            length = result.getByteLength()
+            byteView = result.getByteView()
+            for x in range(length):
+                byte = byteView.readByte(startPos + x)
+            print(&quot;Binary&quot;)
+        elif type == VALUE_NUMBER_UNSIGNED:
+            print(&quot;Unsigned: &quot; + str(value.getUnsigned()))
+        elif type == VALUE_NUMBER_SIGNED:
+            print(&quot;Signed: &quot; + str(value.getSigned()))
+        elif type == VALUE_NUMBER_FLOAT:
+            print(&quot;Float: &quot; + str(value.getFloat()))
+        elif type == VALUE_STRING:
+            print(&quot;String: &quot; + value.getString())
+
+    print(result.getStringRepresentation())
+
+def terminate():
+    print(&quot;hello terminate&quot;)
+                </source>
+            </script>
+        </scripts>
+        <structure name="PMC File" id="249" encoding="ISO_8859-1:1987" endian="little" signed="no">
+            <!-- Header Section -->
+            <number name="File Version" id="250" fillcolor="55AA00" type="integer" length="4" endian="little">
+                <description>Version of the file format</description>
+            </number>
+            <number name="Collision Type" id="251" fillcolor="FFFF00" type="integer" length="4" endian="little"/>
+            <number name="Collision Count" id="252" fillcolor="FFAAFF" type="integer" length="4" endian="little"/>
+            <number name="Materials Count" id="253" fillcolor="FFAA00" type="integer" length="4" endian="little"/>
+            <number name="Mesh Count" id="254" fillcolor="FF5500" type="integer" length="4" endian="little"/>
+            <!-- Unknown Pattern (s_array) -->
+            <structure name="Unknown Pattern" id="255" repeat="id:252" repeatmax="-1">
+                <number name="Value 1" id="256" fillcolor="AAFF00" type="integer" length="4" endian="little"/>
+                <number name="Value 2" id="257" fillcolor="AAFF55" type="integer" length="4" endian="little"/>
+                <number name="Value 3" id="258" fillcolor="AAFFAA" type="integer" length="4" endian="little"/>
+            </structure>
+            <!-- Sections (x_array) -->
+            <structure name="Sections" id="260" repeat="id:252" repeatmax="-1">
+                <number name="Section Pointer 1" id="261" fillcolor="FF00FF" type="integer" length="4" endian="little"/>
+                <number name="Section Pointer 2" id="262" fillcolor="FF55FF" type="integer" length="4" endian="little"/>
+            </structure>
+            <!-- Pattern (y_array) -->
+            <structure name="Pattern" id="264" repeat="id:252" repeatmax="-1">
+                <number name="Pattern Value 1" id="265" fillcolor="00AAFF" type="integer" length="4" endian="little"/>
+                <number name="Pattern Value 2" id="266" fillcolor="00FFAA" type="integer" length="4" endian="little"/>
+                <number name="Pattern Value 3" id="267" fillcolor="00FF55" type="integer" length="4" endian="little"/>
+                <number name="Pattern Value 4" id="268" fillcolor="00FF00" type="integer" length="4" endian="little"/>
+            </structure>
+            <!-- Materials (mat_array) -->
+            <structure name="Materials" id="270">
+                <structure name="Material" id="271" repeat="id:253" repeatmax="-1">
+                    <number name="Value" id="272" fillcolor="FF0000" type="integer" length="4" endian="little"/>
+                </structure>
+            </structure>
+            <!-- Vertices and Indexes (vi_array) -->
+            <structure name="Vertices and Indexes" id="275" repeat="id:254" repeatmax="-1">
+                <number name="Index Count" id="276" fillcolor="AA0000" type="integer" length="4" endian="little"/>
+                <number name="Vertex Count" id="277" fillcolor="AA5500" type="integer" length="4" endian="little"/>
+                <number name="Unknown Value 1" id="278" fillcolor="AAAA00" type="integer" length="4" endian="little"/>
+                <number name="Unknown Value 2" id="279" fillcolor="AAAA55" type="integer" length="4" endian="little"/>
+            </structure>
+            <!-- End Section Marker -->
+            <number name="End Section Marker" id="281" fillcolor="555500" type="integer" length="4" endian="little"/>
+            <!-- Coordinates (e_array) -->
+            <structure name="Coordinates" id="282">
+                <structure name="Coord" id="283" repeat="id:277" repeatmax="-1">
+                    <number name="Coordinate X " id="284" fillcolor="00FF00" type="float" length="4" endian="little"/>
+                    <number name="Coordinate Y" id="285" fillcolor="00AA00" type="float" length="4" endian="little"/>
+                    <number name="Coordinate Z" id="286" fillcolor="005500" type="float" length="4" endian="little"/>
+                </structure>
+            </structure>
+            <!-- Triangle Indexes (ry_array) -->
+            <structure name="Indexes" id="289">
+                <structure name="Triangle Indexes" id="290" repeat="id:276" repeatmax="-1">
+                    <number name="Index 1" id="291" fillcolor="0000FF" type="integer" length="2" endian="little"/>
+                    <number name="Index 2" id="292" fillcolor="0000AA" type="integer" length="2" endian="little"/>
+                    <number name="Index 3" id="293" fillcolor="000055" type="integer" length="2" endian="little"/>
+                </structure>
+            </structure>
+            <!-- End of File Pattern (rty_array) -->
+            <structure name="End of File Pattern" id="296" repeat="id:254" repeatmax="-1">
+                <number name="End Value 1" id="297" fillcolor="FF00AA" type="integer" length="4" endian="little"/>
+                <number name="End Value 2" id="298" fillcolor="FF0055" type="integer" length="4" endian="little"/>
+                <number name="End Value 3" id="299" fillcolor="FF0000" type="integer" length="4" endian="little"/>
+                <number name="End Value 4" id="300" fillcolor="AA00AA" type="integer" length="4" endian="little"/>
+                <number name="End Value 5" id="301" fillcolor="AA0055" type="integer" length="4" endian="little"/>
+            </structure>
+        </structure>
+    </grammar>
+</ufwb>
