@@ -12,8 +12,9 @@
 | 6 | .pmd       | ... | ... | ... |  0%  |  Model Descriptor  | :x: |
 | 7 | .ai       | ... | ... | ... |  0%  |  Logic  | :x: |
 
-*pmc - It works with the "ai_test" location collision. 
-Condition: the collision file is designed for one mesh and the collision type is Convex or Mesh.
+> [!IMPORTANT]
+> *pmc - It works with the "ai_test" location collision. 
+> Condition: the collision file is designed for one mesh and the collision type is Convex or Mesh.
 
 ## Scripts
 - [pmc_info.py](https://github.com/AdsZero/Prism3D-File-Formats-HU2010-/tree/main/scripts/pmc_info.py) - Using this script, you can view information about the pmc file. Drag and drop the pmc file onto the script.
