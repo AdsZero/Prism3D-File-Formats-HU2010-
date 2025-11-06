@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.17">
+    <grammar name="PMA grammar" start="id:279" author="Dima" fileextension="pma">
+        <description>Grammar for PMA files</description>
+        <structure name="PMA file" id="279" encoding="ISO_8859-1:1987" endian="big" signed="no">
+            <number name="File Version" id="280" fillcolor="FF557F" type="integer" length="4" endian="little"/>
+            <number name="&lt;number-1&gt;" id="281" type="integer" length="1" endian="little"/>
+            <number name="&lt;number-5&gt;" id="323" type="integer" length="3" endian="little"/>
+            <number name="&lt;number-2&gt;" id="282" type="integer" length="4" endian="little"/>
+            <number name="Keys" id="283" fillcolor="AAFF00" type="integer" length="2" endian="little"/>
+            <number name="&lt;number-3&gt;" id="321" type="integer" length="2" endian="little"/>
+            <number name="Bones" id="284" fillcolor="AAFF7F" type="integer" length="2" endian="little"/>
+            <number name="&lt;number-7&gt;" id="322" type="integer" length="2" endian="little"/>
+            <number name="&lt;number&gt;" id="285" type="integer" length="4" endian="little"/>
+            <number name="Start KEYS" id="286" type="integer" length="2" endian="little"/>
+            <number name="&lt;number-6&gt;" id="324" type="integer" length="2" endian="little"/>
+            <number name="Start ID" id="287" fillcolor="005500" type="integer" length="4" endian="little"/>
+            <number name="End ID" id="288" fillcolor="00AA00" type="integer" length="4" endian="little"/>
+            <number name="HEX Length" id="289" fillcolor="AA55FF" type="integer" length="4" endian="little"/>
+            <number name="&lt;number-4&gt;" id="290" type="integer" length="4" endian="little"/>
+            <structure name="KEYS" id="291" repeat="id:283" repeatmax="-1" order="variable">
+                <number name="KEY" id="292" fillcolor="55FFFF" type="integer" length="4" endian="little"/>
+            </structure>
+            <structure name="ID" id="294" repeat="id:284" repeatmax="-1" order="variable">
+                <number name="ID" id="295" fillcolor="FF55FF" type="integer" length="1"/>
+            </structure>
+            <structure name="bone" id="297" repeat="id:284" repeatmax="-1">
+                <structure name="key" id="298" repeat="id:283" repeatmax="-1">
+                    <structure name="&lt;structure&gt;" id="299" repeatmin="4" repeatmax="4" order="variable">
+                        <number name="&lt;number&gt;" id="300" fillcolor="C3B882" type="integer" length="4"/>
+                    </structure>
+                    <structure name="rotation" id="302">
+                        <number name="X" id="303" fillcolor="FF0000" type="float" length="4" endian="little"/>
+                        <number name="Y" id="304" fillcolor="00FF00" type="float" length="4" endian="little"/>
+                        <number name="Z" id="305" fillcolor="0000FF" type="float" length="4" endian="little"/>
+                        <number name="W" id="306" fillcolor="FFFF7F" type="float" length="4" endian="little"/>
+                    </structure>
+                    <structure name="position" id="308">
+                        <number name="X" id="309" fillcolor="FF0000" type="float" length="4" endian="little"/>
+                        <number name="Y" id="310" fillcolor="00FF00" type="float" length="4" endian="little"/>
+                        <number name="Z" id="311" fillcolor="0000FF" type="float" length="4" endian="little"/>
+                    </structure>
+                    <structure name="scale" id="313">
+                        <number name="X" id="314" fillcolor="FF0000" type="float" length="4" endian="little"/>
+                        <number name="Y" id="315" fillcolor="00FF00" type="float" length="4" endian="little"/>
+                        <number name="Z" id="316" fillcolor="0000FF" type="float" length="4" endian="little"/>
+                    </structure>
+                </structure>
+            </structure>
+        </structure>
+    </grammar>
+</ufwb>
