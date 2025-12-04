@@ -1,16 +1,12 @@
-/*!
- * LND File Format (ImHex Template)
- * ----------------------------------------------------------------------
- * File format: LND
- * Description: A template for analyzing geometric data in the LND file format.
- * Format version: 1.0
- * Template author: Adyusha
- * Date of creation: 12/04/2025
- * ----------------------------------------------------------------------
- */
+#pragma name "Prism3D (.lnd)"
+#pragma description "Prism3D Location Format (.lnd)"
+#pragma category "Game Assets/3D"
+#pragma author "Adyusha"
+#pragma version "1.0"
+#pragma date "2025-12-04"
 
-#pragma array_limit 0xFFFF
-#pragma pattern_limit 0xFFFFF
+#pragma magic [ 05 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? 10] @ 0x00
+#pragma file_extensions lnd
 
 struct Vector3f {
     le float coord_x [[color("FF0000"), name("Coordinate X"), comment("X coordinate")]];
