@@ -1,13 +1,12 @@
-/*!
- * TOBJ File Format (ImHex Template)
- * ----------------------------------------------------------------------
- * File format: TOBJ
- * Description: A template for analyzing the file format in which a 3D model texture object is stored
- * Format version: 1.0
- * Template author: Adyusha
- * Date of creation: 23/02/2024
- * ----------------------------------------------------------------------
- */
+#pragma name "Prism3D (.tobj)"
+#pragma description "Prism3D Texture Object Format (.tobj)"
+#pragma category "Game Assets/3D"
+#pragma author "Adyusha"
+#pragma version "1.0"
+#pragma date "2024-02-23"
+
+#pragma magic [ 01 0A B1 70] @ 0x00
+#pragma file_extensions tobj
 
 #pragma array_limit 0xFFFF
 #pragma pattern_limit 0xFFFFF
