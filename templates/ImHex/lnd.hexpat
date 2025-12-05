@@ -7,7 +7,6 @@
 
 #pragma magic [ 05 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? 10] @ 0x00
 #pragma file_extensions lnd
-
 #pragma array_limit 0xFFFFFF
 #pragma pattern_limit 0xFFFFFFF
 
