@@ -8,6 +8,9 @@
 #pragma magic [ 05 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? 10] @ 0x00
 #pragma file_extensions lnd
 
+#pragma array_limit 0xFFFFFF
+#pragma pattern_limit 0xFFFFFFF
+
 struct Vector3f {
     le float coord_x [[color("FF0000"), name("Coordinate X"), comment("X coordinate")]];
     le float coord_y [[color("55AA00"), name("Coordinate Y"), comment("Y coordinate")]]; 
