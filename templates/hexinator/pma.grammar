@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ufwb version="1.17">
-    <grammar name="PMA grammar" start="id:279" author="Dima" fileextension="pma">
+    <grammar name="PMA grammar" start="id:279" author="Adyusha" fileextension="pma">
         <description>Grammar for PMA files</description>
         <structure name="PMA file" id="279" encoding="ISO_8859-1:1987" endian="big" signed="no">
             <number name="File Version" id="280" fillcolor="FF557F" type="integer" length="4" endian="little"/>
