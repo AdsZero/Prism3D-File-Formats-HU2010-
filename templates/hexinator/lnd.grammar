@@ -55,7 +55,7 @@ def terminate():
             </number>
             <number name="𝗠𝗘𝗦𝗛𝗘𝗦" id="3" fillcolor="FFFF00" type="integer" length="4" endian="little"/>
             <number name="𝗠𝗔𝗧𝗘𝗥𝗜𝗔𝗟" id="4" fillcolor="FFAAFF" type="integer" length="4" endian="little"/>
-            <number name="NONE" id="5" fillcolor="FFAA00" type="integer" length="4" endian="little"/>
+            <number name="𝗛𝗘𝗔𝗗𝗘𝗥𝗦𝗜𝗭𝗘" id="5" fillcolor="FFAA00" type="integer" length="4" endian="little"/>
             <structure name="𝗦𝗘𝗖𝗧𝗜𝗢𝗡" id="6" repeat="id:3" repeatmax="-1">
                 <structure name="pointA" id="7">
                     <number name="coord_x" id="8" strokecolor="FF0000" type="float" length="4" endian="little"/>
@@ -71,18 +71,18 @@ def terminate():
                 <structure name="𝗨𝗩 𝗠𝗔𝗧𝗘𝗥𝗜𝗔𝗟" id="18" repeat="id:4" repeatmax="-1">
                     <structure name="texture[0]" id="27">
                         <number name="scale" id="20" strokecolor="FFFFFF" fillcolor="AAAAFF" repeatmin="0" type="float" length="4" endian="little"/>
-                        <number name="n1" id="25" type="float" length="4" endian="little"/>
-                        <number name="n2" id="26" type="float" length="4" endian="little"/>
+                        <number name="Offset U" id="25" type="float" length="4" endian="little"/>
+                        <number name="Offset V" id="26" type="float" length="4" endian="little"/>
                     </structure>
                     <structure name="texture[1]" id="29">
                         <number name="scale" id="31" type="float" length="4" endian="little"/>
-                        <number name="n1" id="32" type="float" length="4" endian="little"/>
-                        <number name="n2" id="33" type="float" length="4" endian="little"/>
+                        <number name="Offset U" id="32" type="float" length="4" endian="little"/>
+                        <number name="Offset V" id="33" type="float" length="4" endian="little"/>
                     </structure>
                     <structure name="texture[2]" id="34">
                         <number name="scale" id="36" type="float" length="4" endian="little"/>
-                        <number name="n1" id="37" type="float" length="4" endian="little"/>
-                        <number name="n2" id="38" type="float" length="4" endian="little"/>
+                        <number name="Offset U" id="37" type="float" length="4" endian="little"/>
+                        <number name="Offset V" id="38" type="float" length="4" endian="little"/>
                     </structure>
                 </structure>
             </structure>
