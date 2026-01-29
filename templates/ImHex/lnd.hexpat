@@ -18,8 +18,8 @@ struct Vector3f {
 
 struct TextureData {
     le float scale [[color("707070"), name("Scale"), comment("Texture scaling")]];
-    le float n1 [[color("505050"), name("n1"), comment("Unknown value")]]; 
-    le float n2 [[color("303030"), name("n2"), comment("Unknown value")]]; 
+    le float n1 [[color("505050"), name("Offset U"), comment("Offset U")]]; 
+    le float n2 [[color("303030"), name("Offset V"), comment("Offset V")]]; 
 };
 
 struct UV_MATERIAL {
