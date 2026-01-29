@@ -29,8 +29,8 @@ struct UV_MATERIAL {
 };
 
 struct SECTION {
-    Vector3f pointA [[name("point A"), comment("point A")]];
-    Vector3f pointB [[name("point B"), comment("point B")]];
+    Vector3f pointA [[name("point A"), comment("Point A")]];
+    Vector3f pointB [[name("point B"), comment("Point B")]];
     le u16 TAB [[color("C0C0C0"), name("TAB"), comment("Indentation between bytes")]];
     UV_MATERIAL UV_Materials[parent.Material] [[name("UV Materials"), comment("UV Materials")]];
 };
